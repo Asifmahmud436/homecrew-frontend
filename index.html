@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>Homecrew</title>
+</head>
+<body>
+    <header>
+        <!-- navbar -->
+            <nav>
+                <div>
+                    <ul>
+                        <li><img src="images/logo.png" alt="" srcset="" class="logo-img"></li>
+                        <li class="fw-bold main-li"><a href="index.html" class="nav-anchor">HomeCrew</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="login-ul fw-bold">
+                        <li class="login-li"><a href="index.html" class="nav-anchor">Home</a></li>
+                        <li class="login-li"><a href="serviceDetails.html" class="nav-anchor">Servcies</a></li>
+                        <li class="login-li"><a href="login.html" class="nav-anchor">Sign In</a></li>
+                        <li class="login-li"><a href="register.html" class="nav-anchor">Sign Up</a></li>
+                        <div class="dropdown dropdown-reform" >
+                            <button class="btn btn-secondary dropdown-toggle dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Profile
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="editProfile.html">Edit Profile</a></li>
+                              <li><a class="dropdown-item" href="order_history.html">Order History</a></li>
+                              <li onclick="handleLogOut()"><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                    
+                </div>
+            </nav>
+            <div class="banner-container">
+                <div class="banner-left fw-bold">
+                    <h1 class="main-tag">
+                        Rebuilding Your
+                        <br>
+                        Home
+                    </h1>
+                    <p class="banner-para">Providing good home services and abiding by them is our main goal.We ensure  a safe and healthy home for you and your loved ones.</p>
+                </div>
+                <div class="banner-right">
+                    <img src="images/Keep-Up-With-Home-Maintenance.jpg.webp" alt="" class="banner-img">
+                </div>
+            </div>
+    </header>
+    <main>
+
+        <div class="promise-part">
+            <div class="promise-card">
+                <h5 class="title">Ensuring Safety</h5>
+                <h6 class="subtitle">Assurance</h6>
+                <p class="description">We can ensure you that by taking our services your homes' safety is not compromised.</p>
+                <a href="serviceDetails.html"><button class="btn btn-outline-dark fw-bold">Services</button></a>
+            </div>
+            <div class="promise-card">
+                <h5 class="title">Expert Team</h5>
+                <h6 class="subtitle">Professionalism</h6>
+                <p class="description">Our team consists of skilled professionals trained to deliver top-notch services.</p>
+                <a href="serviceDetails.html"><button class="btn btn-outline-dark fw-bold">Services</button></a>
+            </div>
+            <div class="promise-card">
+                <h5 class="title">Affordable Pricing</h5>
+                <h6 class="subtitle">Value for Money</h6>
+                <p class="description des-sp">Get the best quality services at prices that fit your budget.</p>
+                <a href="serviceDetails.html"><button class="btn btn-outline-dark fw-bold">Services</button></a>
+            </div>
+            <div class="promise-card">
+                <h5 class="title">Customer Satisfaction</h5>
+                <h6 class="subtitle">Our Priority</h6>
+                <p class="description">We prioritize customer satisfaction by ensuring timely and reliable service.</p>
+                <a href="serviceDetails.html"><button class="btn btn-outline-dark fw-bold">Services</button></a>
+            </div>
+        </div>
+        <div class="quote-part">
+            <h1 class="quotes">
+                "Home is where the heart is, and excellent service keeps that heart beating strong"
+            </h1>
+        </div>
+        <div class="swiffy-slider slider-item-reveal slider-nav-round slider-item-ratio slider-item-ratio-21x9" id="slider1">
+    <ul class="slider-container">
+        <li><img src="images/elder_care2.jpg" loading="lazy" alt="..."></li>
+        <li><img src="images/cleaning_house.jpg" loading="lazy" alt="..."></li>
+        <li><img src="images/painting.jpg" loading="lazy" alt="..."></li>
+        <li><img src="images/pet_care.jpg" loading="lazy" alt="..."></li>
+    </ul>
+
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+    <div class="slider-indicators slider-indicators-square d-none d-md-flex">
+        <button class="" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class="active"></button>
+        <button aria-label="Go to slide"></button>
+    </div>
+
+    <div class="slider-indicators slider-indicators-sm slider-indicators-dark slider-indicators-round d-md-none slider-indicators-highlight">
+        <button class="" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class="active"></button>
+        <button aria-label="Go to slide"></button>
+    </div>
+</div>
+    <div class="review-section">
+        <h1 class="review-header">Reviews:</h1>
+        <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible">
+            <ul class="slider-container py-4" id="slider-container">
+                <!-- all reviews are here -->
+            </ul>
+        
+            <button type="button" class="slider-nav" aria-label="Go left"></button>
+            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+        
+            <div class="slider-indicators">
+                <button class="active" aria-label="Go to slide"></button>
+                <button aria-label="Go to slide"></button>
+                <button aria-label="Go to slide"></button>
+                <button aria-label="Go to slide"></button>
+                <button aria-label="Go to slide"></button>
+            </div>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <div class="footer fw-bolder">
+            <p class="sp-small"><small >Contact us: 01317482129 | safaandsafa4@gmail.com</small></p>
+            <p><small>Made And Protected by Zettex ©</small></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="auth.js"></script>
+
+    <script src="app.js"></script>
+    <script src="logout.js"></script>
+    <!-- <script src="editProfile.js"></script> -->
+    <!-- <script src="serviceDetails.js"></script> -->
+    
+</body> 
+</html>

@@ -1,0 +1,105 @@
+.login-container{
+    height: 100vh;
+    margin-left: 490px;
+    margin-top: 20px;
+    
+    /* margin-top: 20px; */
+}
+.first-field{
+    display: block;
+    /* margin-left: 580px;   */
+    margin-top: 70px;
+    padding: 18px;
+    padding-right: 325px;
+    border: none; 
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px gray;
+    
+}
+.all-other-filed{
+    display: block;
+    /* margin-left: 580px; */
+    margin-top: 20px;
+    padding: 18px;
+    padding-right: 325px;
+    border: none; 
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px gray;
+    
+}
+.btn-login{
+    margin-top: 20px; 
+    border: none; 
+    border-radius: 6px;
+    box-shadow: 4px 4px 8px gray;
+    /* margin-left: 80px; */
+    padding: 8px 235px;
+    background-color: #0a3200;
+    color: aliceblue;
+    font-size: 24px;
+
+}
+.login-header{
+    margin-left: 680px;
+    font-size: 48px;
+    margin-top: 20px;
+    font-weight: 900;
+}
+/* small{
+    margin-top: 80px;
+} */
+.btn-reg{
+    padding:10px 222px;
+    display: block;
+}
+.reg-header{
+    margin-top: 2px;
+    margin-left: 650px;
+}
+.two-fields{
+    display: flex;
+    gap: 4px;
+    /* width: 100px; */
+}
+.special-field{
+    padding: 20px 40px;
+    
+}
+.user-input{
+    display: block;
+}
+.user-img{
+    width: 800px;
+    height: 400px;
+}
+#user-photo {
+    width: 520px;
+    height: 400px;
+    border-radius: 20px;
+}
+#user-image{
+    padding-top: 20px;
+    /* margin-left: 20px; */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    /* background-color: black; */
+}
+.user-input{
+    padding: 15px;
+    padding-right: 180px;
+    margin-bottom: 10px;
+    border: none;
+    box-shadow: 4px 4px 8px gray;
+    /* color: antiquewhite; */
+    border-radius: 8px;
+}
+#save-button{
+    padding: 10px 150px;
+    margin-top: 10px;
+    border: none;
+    box-shadow: 4px 4px 8px gray;
+    border-radius: 8px;
+    color: antiquewhite;
+    background-color: black;
+}

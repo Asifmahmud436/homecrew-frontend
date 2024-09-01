@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>Registration</title>
+</head>
+<body>
+    <header>
+        <!-- navbar -->
+            <nav>
+                <div>
+                    <ul>
+                        <li><img src="images/logo.png" alt="" srcset="" class="logo-img"></li>
+                        <li class="fw-bold main-li"><a href="index.html" class="nav-anchor">HomeCrew</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="login-ul fw-bold">
+                        <li class="login-li"><a href="index.html" class="nav-anchor">Home</a></li>
+                        <li class="login-li"><a href="serviceDetails.html" class="nav-anchor">Servcies</a></li>
+                        <li class="login-li"><a href="login.html" class="nav-anchor">Login</a></li>
+                        <li class="login-li"><a href="register.html" class="nav-anchor">Sign Up</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+    </header>
+    <main>
+        <h1 class="login-header reg-header">Register</h1>
+        <!-- carousel of service -->
+        <div class="login-container">
+            <form action="" onsubmit="handleReg(event)">
+                <p id="error" class="fw-bold"></p>
+                <input type="text" name="Username" id="username" placeholder="Username" class="first-field" required>
+                <div class="two-fields">
+                    <input type="text" name="First Name" id="firstName" placeholder="First Name" class="all-other-filed special-field" required>
+                    <input type="text" name="Last Name" id="lastName" placeholder="Last Name" class="all-other-filed special-field" required>
+                </div>
+                <input type="email" name="Email" id="email" placeholder="Email" class="all-other-filed" required>
+                <div class="two-fields">
+                    <input type="password" name="Password" id="password" placeholder="Password" class="all-other-filed special-field"  required>
+                    <input type="password" name="Confirm-password" id="confirm-password" placeholder="Confirm Password" class="all-other-filed special-field"  required>
+                </div>
+                <button class="btn-login btn-reg" type="submit">Register</button>
+            <small>Already have an account? <a href="login.html">Login</small></a>
+        </div>
+    </main>
+    <footer>
+        <div class="footer fw-bolder">
+            <p><small>Made And Protected by Zettex ©</small></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+    <!-- <script src="serviceDetails.js"></script> -->
+    
+</body> 
+</html>

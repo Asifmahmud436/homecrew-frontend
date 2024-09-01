@@ -1,0 +1,50 @@
+#rating,#reviewBody{
+    display: block;
+    /* padding-left: 300px; */
+}
+#reviewForm{
+    padding-left: 550px;
+    margin-top: 30px;
+}
+#rating{
+    padding-right: 270px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 5px;
+    border:none;
+    box-shadow: 4px 4px 8px gray;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+#reviewBody{
+    /* padding-right: 180px; */
+    width: 415px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    border:none;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px gray;
+    height: 250px;
+    margin-top: 20px;
+}
+.rating-label{
+    padding-top: 30px;
+}
+.review-btn{
+    color: white;
+    border: none;
+    box-shadow: 4px 4px 8px gray;
+    background-color: black;
+    border-radius: 8px;
+    padding: 10px;
+    width: 423px;
+    font-weight: 900;
+}
+h1{
+    padding-left: 610px;
+    font-weight: 900;
+    padding-top: 10px;
+}

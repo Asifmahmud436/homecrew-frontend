@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Review</title>
+</head>
+<body>
+    <h1>Submit Your Review</h1>
+    <form id="review-form">
+        <div>
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="One">1 Star</option>
+                <option value="Two">2 Stars</option>
+                <option value="Three">3 Stars</option>
+                <option value="Four">4 Stars</option>
+                <option value="Five">5 Stars</option>
+            </select>
+        </div>
+        <div>
+            <label for="body">Review:</label>
+            <textarea id="body" name="body" rows="5" required></textarea>
+        </div>
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <script>
+        document.getElementById('review-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const params = new URLSearchParams(window.location.search);
+            const serviceId = params.get('service_id');
+            const clientId = localStorage.getItem('user_id') - 11;
+            const token = localStorage.getItem('token');
+
+            const reviewData = {
+                service: serviceId,
+                client: clientId,
+                rating: document.getElementById('rating').value,
+                body: document.getElementById('body').value,
+                slug: `${serviceId}-${Date.now()}`
+            };
+
+            fetch('https://homecrew-backend.onrender.com/review/', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Token ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(reviewData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Review submitted successfully!');
+                window.location.href = 'order_history.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to submit review.');
+            });
+        });
+    </script>
+</body>
+</html>
