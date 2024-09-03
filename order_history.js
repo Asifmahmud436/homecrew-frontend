@@ -40,11 +40,7 @@ const displayAllOrders =(items)=>{
                                 `<td><button class='btn btn-outline-warning''>Can't Be Refunded</button></td>` 
                                 :`<td><button class='btn btn-outline-danger' onclick='deleteOrder(${item.id})'>Cancel Order</button></td>`
                             }
-                            ${
-                                item.order_status!='Bought'?
-                                `<td><p class='btn btn-outline-dark'>Wait till you buy it!</p ></td>` 
-                                :`<td><a href="displaReview.html?service_id=${item.id}" class='btn btn-outline-primary'>Review</a></td>`
-                            }
+                            
                             ${
                                 item.order_status=='Bought'?
                                 `<td><p class='btn btn-outline-secondary'>Delivered</p ></td>` 
@@ -70,11 +66,7 @@ const displayAllOrders =(items)=>{
                                 `<td><button class='btn btn-outline-warning'>Can't Be Refunded</button></td>` 
                                 :`<td><button class='btn btn-outline-danger' onclick='deleteOrder(${item.id})'>Cancel Order</button></td>`
                             }
-                            ${
-                                item.order_status!='Bought'?
-                                `<td><p class='btn btn-outline-dark'>Wait till you buy it!</p ></td>` 
-                                :`<td><a href="displayReview.html?service_id=${item.service_id}" class='btn btn-outline-primary'>Review</a></td>`
-                            }
+                            
                             ${
                                 item.order_status=='Bought'?
                                 `<td>Enjoy Your Service!</td>` 

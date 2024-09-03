@@ -12,33 +12,32 @@
 <body>
     <header>
         <!-- navbar -->
-            <nav>
-                <div>
-                    <ul>
-                        <li><img src="images/logo.png" alt="" srcset="" class="logo-img"></li>
-                        <li class="fw-bold main-li"><a href="index.html" class="nav-anchor">HomeCrew</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="login-ul fw-bold">
-                        <li class="login-li"><a href="index.html" class="nav-anchor">Home</a></li>
-                        <li class="login-li"><a href="serviceDetails.html" class="nav-anchor">Servcies</a></li>
-                        <li class="login-li"><a href="login.html" class="nav-anchor">Sign In</a></li>
-                        <li class="login-li"><a href="register.html" class="nav-anchor">Sign Up</a></li>
-                        <div class="dropdown dropdown-reform" >
-                            <button class="btn btn-secondary dropdown-toggle dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Profile
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="editProfile.html">Edit Profile</a></li>
-                              <li><a class="dropdown-item" href="order_history.html">Order History</a></li>
-                              <li onclick="handleLogOut()"><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
-                        </div>
-                    </ul>
-                    
-                </div>
-            </nav>
+        <nav >
+            <div>
+                <ul>
+                    <li><img src="images/logo.png" alt="" srcset="" class="logo-img"></li>
+                    <li class="fw-bold main-li"><a href="index.html" class="nav-anchor sp-nav">HomeCrew</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="login-ul fw-bold">
+                    <li class="login-li"><a href="index.html" class="nav-anchor">Home</a></li>
+                            <li class="login-li"><a href="serviceDetails.html" class="nav-anchor"   >Servcies</a></li>
+                            <li class="login-li"><a href="login.html" class="nav-anchor">Login</a></li>
+                            <li class="login-li"><a href="register.html" class="nav-anchor">Sign Up</a></li>
+                            <div class="dropdown dropdown-reform" >
+                                <button class="btn btn-secondary dropdown-toggle dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Profile
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="editProfile.html">Edit Profile</a></li>
+                                  <li><a class="dropdown-item" href="order_history.html">Order History</a></li>
+                                  <li onclick="handleLogOut()"><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                            </div>
+                </ul>
+            </div>
+        </nav>
             <div class="banner-container">
                 <div class="banner-left fw-bold">
                     <h1 class="main-tag">
@@ -112,7 +111,7 @@
     </div>
 </div>
     <div class="review-section">
-        <h1 class="review-header">Reviews:</h1>
+        <!-- <h1 class="review-header">Reviews:</h1> -->
         <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible">
             <ul class="slider-container py-4" id="slider-container">
                 <!-- all reviews are here -->

@@ -1,50 +1,77 @@
-#rating,#reviewBody{
-    display: block;
-    /* padding-left: 300px; */
+/* Container for the form */
+#review-form-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
 }
-#reviewForm{
-    padding-left: 550px;
+
+#reviewForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 30px;
 }
-#rating{
-    padding-right: 270px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    padding-left: 5px;
-    border:none;
+
+/* Responsive width for textarea and select */
+#reviewBody, #rating {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    border: none;
     box-shadow: 4px 4px 8px gray;
     border-radius: 8px;
+    font-size: 18px;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 18px;
 }
-#reviewBody{
-    /* padding-right: 180px; */
-    width: 415px;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-top: 20px;
-    border:none;
-    border-radius: 8px;
-    box-shadow: 4px 4px 8px gray;
-    height: 250px;
-    margin-top: 20px;
-}
-.rating-label{
-    padding-top: 30px;
-}
-.review-btn{
+
+/* Styles for the submit button */
+.review-btn {
     color: white;
     border: none;
     box-shadow: 4px 4px 8px gray;
     background-color: black;
     border-radius: 8px;
     padding: 10px;
-    width: 423px;
+    width: 100%;
+    max-width: 500px;
     font-weight: 900;
 }
-h1{
-    padding-left: 610px;
+
+/* Center the heading */
+h1 {
+    text-align: center;
     font-weight: 900;
     padding-top: 10px;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 768px) {
+    #reviewForm {
+        padding-left: 0;
+    }
+
+    #reviewBody, #rating {
+        width: 80%;
+    }
+
+    .review-btn {
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    #reviewForm {
+        padding-left: 0;
+        height: 100vh;
+    }
+
+    #reviewBody, #rating {
+        width: 60%;
+    }
+
+    .review-btn {
+        width: 60%;
+    }
 }
