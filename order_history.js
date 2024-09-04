@@ -37,7 +37,7 @@ const displayAllOrders =(items)=>{
                             <td>${item.order_status}</td>
                             ${
                                 item.order_status=='Bought'?
-                                `<td><button class='btn btn-outline-warning''>Can't Be Refunded</button></td>` 
+                                `<td><button class='btn btn-outline-warning''>No Refund</button></td>` 
                                 :`<td><button class='btn btn-outline-danger' onclick='deleteOrder(${item.id})'>Cancel Order</button></td>`
                             }
                             
@@ -63,7 +63,7 @@ const displayAllOrders =(items)=>{
                             <td>${item.order_status}</td>
                             ${
                                 item.order_status=='Bought'?
-                                `<td><button class='btn btn-outline-warning'>Can't Be Refunded</button></td>` 
+                                `<td><button class='btn btn-outline-warning'>No Refund</button></td>` 
                                 :`<td><button class='btn btn-outline-danger' onclick='deleteOrder(${item.id})'>Cancel Order</button></td>`
                             }
                             

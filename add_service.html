@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="login.css">
+    <!-- <link rel="stylesheet" href="login.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="displayReview.css"> -->
+    
     <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
     <title>Homecrew</title>
 </head>
-<body class="table-main">
+<body>
     <header>
         <!-- navbar -->
             <nav>
@@ -24,41 +24,27 @@
                     <ul class="login-ul fw-bold">
                         <li class="login-li"><a href="index.html" class="nav-anchor">Home</a></li>
                         <li class="login-li"><a href="serviceDetails.html" class="nav-anchor">Servcies</a></li>
-                        <!-- <li class="login-li"><a href="login.html" class="nav-anchor">Login</a></li> -->
+                        <li class="login-li"><a href="login.html" class="nav-anchor">Login</a></li>
                         <li class="login-li"><a href="register.html" class="nav-anchor">Sign Up</a></li>
-                        <div class="dropdown dropdown-reform" >
-                            <button class="btn btn-secondary dropdown-toggle dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Profile
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="editProfile.html">Edit Profile</a></li>
-                              <li><a class="dropdown-item" href="order_history.html">Order History</a></li>
-                              <li onclick="handleLogOut()"><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
-                        </div>
                     </ul>
                 </div>
             </nav>
             
     </header>
-    <main >
-        <div class="all-appointment-container">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Client Name</th>
-                    <th scope="col">Service Name</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Cancel Order</th>
-                    <th scope="col">Order Delivery</th>
-                    <!-- <th scope="col">Action</th> -->
-                  </tr>
-                </thead>
-                <tbody id="table-body">
-                  
-                </tbody>
-            </table>
-              
+    <main>
+        <h1 class="service-header">Add a Service</h1>
+        <!-- carousel of service -->
+        <div class="login-container">
+            <form action="" onsubmit="handleService(event)">
+                <input type="text" name="Title" id="service-title" placeholder="Title" class="first-field" required>
+                <input type="text" name="Body" id="service-body" placeholder="Body" class="first-field" required>
+                <div class="service-img">
+                    <img id="service-photo" src="" alt="Service Photo">
+                    <input type="file" id="service-image" name="image" placeholder="Change Photo" >
+                </div>
+                <button  class="btn-service" type="submit">Add Service</button>
+            </form>
+            
         </div>
     </main>
     <footer>
@@ -71,8 +57,9 @@
 
     <script src="app.js"></script>
     <script src="auth.js"></script>
-    <script src="order_history.js"></script>
-    <script src="logout.js"></script>
+    <script src="submit_Service.js"></script>
+    <!-- <script src="editProfile.js"></script> -->
+
     <!-- <script src="serviceDetails.js"></script> -->
     
 </body> 

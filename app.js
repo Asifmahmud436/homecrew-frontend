@@ -10,6 +10,10 @@ const loadService = () =>{
 
 const displayService = (services) =>{
     services.forEach(service => {
+        let stars = '';
+        for (let i = 0; i < service.average_rating; i++) {
+            stars += '⭐';
+        }
         const parent = document.getElementById('doctors');
         const div = document.createElement('div');
         div.classList.add('doc-card');
@@ -17,7 +21,7 @@ const displayService = (services) =>{
                 <img class="doc-img" src="${service.image}" alt="">
                 <div class='card-content'>
                     <h4>${service.name}</h4>
-                    <p>${service.average_rating !== null ? service.average_rating+' Star':'No one reviewed it yet'}</p>
+                    <p>${service.average_rating !== null ? stars:'No one reviewed it yet'}</p>
                     <p>${service.description.slice(0,80)}</p>
                     ${
                         token?
@@ -112,7 +116,7 @@ const addToCart=(param)=>{
             // div.dataset.serviceId = data.id;
             div.innerHTML = `
                 <div class='display-cart mb-2'>
-                    <p class="fw-bold text-white">${data.name}</p>
+                    <p class="fw-bold text-black" >${data.name}</p>
                     
                     <button class="btn btn-danger" type="submit" onclick='removeFromCart(${data.id})'>Delete</button>
                 </div>
@@ -162,8 +166,8 @@ orderAllItems = () =>{
         };
         removeFromCartAll();
     }
-
 }
+
 
 
 
