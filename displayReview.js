@@ -40,7 +40,7 @@ function handleReviewSubmit(event) {
             console.log('Review submitted:', data);
             alert('Review submitted successfully!');
             // Optionally redirect to another page
-            // window.location.href = 'index.html'; 
+            window.location.href = 'index.html'; 
         })
         .catch(error => {
             console.error('Error:', error);

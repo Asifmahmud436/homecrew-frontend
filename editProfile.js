@@ -1,25 +1,28 @@
 const loadUser = () => {
     const user_id = localStorage.getItem('user_id');
     const token = localStorage.getItem('token');
+
     fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`, {
         method: 'GET',
         headers: {
-            'Authorization': `${token}`,
+            'Authorization': `Token ${token}`,
             'Content-Type': 'application/json',
         }
     })
     .then((res) => res.json())
     .then(data => {
-        document.getElementById('user-photo').src = data.image;
-        document.getElementById('username').textContent = data.user.username;
-        document.getElementById('first-name').value = data.user.first_name;
-        document.getElementById('last-name').value = data.user.last_name;
-        document.getElementById('phone-no').value = data.phone_no;
-        document.getElementById('facebook-id-link').value = data.facebook_Id_link;
+        document.getElementById('user-photo').src = data.image || 'default-photo.png'; // Fallback to a default image if none is provided
+        document.getElementById('first-name').value = data.user.first_name || '';
+        document.getElementById('last-name').value = data.user.last_name || '';
+        document.getElementById('phone-no').value = data.phone_no || '';
+        document.getElementById('facebook-id-link').value = data.facebook_Id_link || '';
+    })
+    .catch(error => {
+        console.error('Error loading user data:', error);
     });
 };
 
-loadUser();
+
 
 document.getElementById('save-button').addEventListener('click', function() {
     const user_id = localStorage.getItem('user_id'); // Make sure this calculation is correct
@@ -115,5 +118,5 @@ const makeAdmin=(id)=>{
     });
 };
 
-
-AllUser()
+loadUser();
+AllUser();

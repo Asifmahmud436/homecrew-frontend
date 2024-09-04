@@ -32,7 +32,7 @@ const displayAllOrders =(items)=>{
                     if(item.cancel == false){
                         tr.innerHTML=`
                             
-                            <td>${item.client_name}</td>
+                            <td class='special-td'>${item.client_name}</td>
                             <td>${item.service_name}</td>
                             <td>${item.order_status}</td>
                             ${
