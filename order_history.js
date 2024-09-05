@@ -49,6 +49,17 @@ const displayAllOrders =(items)=>{
                         `;
                         parent.appendChild(tr);
                     }       
+                    else{
+                        tr.innerHTML=`
+                            
+                            <td class='special-td'>${item.client_name}</td>
+                            <td>${item.service_name}</td>
+                            <td>${item.order_status}</td>
+                            <td class='text-danger'>Order Cancelled</td>
+                            <td class='text-danger'>Customer Cancelled</td>
+                        `;
+                        parent.appendChild(tr);
+                    }       
                 });
             }
             else{
@@ -72,6 +83,18 @@ const displayAllOrders =(items)=>{
                                 `<td>Enjoy Your Service!</td>` 
                                 :`<td>Your order is bring processed</td>`
                             }
+                            
+                        `;
+                        parent.appendChild(tr);
+                    }       
+                    else{
+                        tr.innerHTML=`
+                            
+                            <td>${item.client_name}</td>
+                            <td>${item.service_name}</td>
+                            <td>${item.order_status}</td>
+                            <td class='text-danger'>Order Cancelled</td>
+                            <td class='text-danger'>You cancelled the order</td>
                             
                         `;
                         parent.appendChild(tr);
