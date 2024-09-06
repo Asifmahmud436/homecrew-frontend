@@ -81,7 +81,7 @@ const displayAllOrders =(items)=>{
                             ${
                                 item.order_status=='Bought'?
                                 `<td>Enjoy Your Service!</td>` 
-                                :`<td>Your order is bring processed</td>`
+                                :`<td>Your order is being processed</td>`
                             }
                             
                         `;
