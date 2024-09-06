@@ -62,6 +62,10 @@ const AllUser = () =>{
     fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`)
         .then((res) => res.json())
         .then((data) => loadAllUser(data));
+ 
+    fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`)
+        .then((res) => res.json())
+        .then((data) => loadAdminBtn(data));
 }
 const loadAllUser = (val) =>{
     if(val.user.is_staff == true){
@@ -74,25 +78,59 @@ const loadAllUser = (val) =>{
             h1.innerText = 'Make Admin Changes';
             header_parent.appendChild(h1);
             items.forEach((item) => {
-                const parent = document.getElementById('make-admin-table');
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    
-                    <td class='admin-items'>${item.user.username}</td>
-                    ${
-                        item.user.is_staff?
-                        `<td><button class='btn btn-secondary'>Is An Admin</button></td>` 
-                        :`<td><button class='btn btn-success' onclick='makeAdmin(${item.user.id})'>Make Admin</button></td>`
-                    }
-                `;
-                parent.appendChild(tr);
+                if(item.request_for_admin && !item.user.is_staff){
+                    const parent = document.getElementById('make-admin-table');
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td class='admin-items'>${item.user.username}</td>
+                        <td><button class='btn btn-success' onclick='makeAdmin(${item.user.id})'>Make Admin</button></td>
+                    `;
+                    parent.appendChild(tr);
+                }
             });
         });
     }
 }
 
+const loadAdminBtn=(item)=>{
+    const parent = document.getElementById('request-admin');
+    if(!item.request_for_admin && !item.user.is_staff){
+        parent.innerHTML = `
+        <button type="submit" onclick='requestAdmin(${item.id})' class='request-admin-btn'>Request For Admin</button>
+        `;
+    }
+    else if(item.request_for_admin && !item.user.is_staff){
+        parent.innerHTML = `
+        <button type="disabled" class='request-admin-btn'>Requested For Admin</button>
+        `;
+    }
+    else{
+        parent.innerHTML = ``;
+    }
+}
 
-
+const requestAdmin=(id)=>{
+    const token = localStorage.getItem('token');
+    fetch(`https://homecrew-backend.onrender.com/client/list/${id}/`, {
+        method: 'PATCH',
+        headers: {
+            'Authorization': `Token ${token}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            request_for_admin:true
+        })
+    })
+    .then((res) => res.json())
+    .then((data) => {
+        console.log('You requested for being an admin:', data);
+        location.reload();
+    })
+    .catch(error => {
+        console.error('Error making user admin:', error);
+    });
+    console.log(id);
+};
 const makeAdmin=(id)=>{
     const token = localStorage.getItem('token');
     fetch(`https://homecrew-backend.onrender.com/client/list/${id}/`, {
@@ -111,7 +149,6 @@ const makeAdmin=(id)=>{
     .then((data) => {
         console.log('User is now an admin:', data);
         location.reload();
-        // You can reload the list or update the UI as needed
     })
     .catch(error => {
         console.error('Error making user admin:', error);

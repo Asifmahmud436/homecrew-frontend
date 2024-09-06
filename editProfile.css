@@ -623,7 +623,17 @@ tbody tr:hover {
         padding: 50px 20px;
     }
 }
-
+.request-admin{
+    height: 40px;
+}
+.request-admin-btn{
+    /* margin-left: 80px; */
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: black;
+    color: blanchedalmond;
+    padding: 8px 12px;
+}
 
 /* Media Query for Small Devices (Mobile, up to 767px) */
 @media (max-width: 767px) {
@@ -1084,6 +1094,13 @@ tbody tr:hover {
         border-radius: 8px;
         overflow: hidden;
     }
-
+    .request-admin-btn{
+        /* margin-left: 80px; */
+        margin-top: 0px;
+        border-radius: 8px;
+        background-color: black;
+        color: blanchedalmond;
+        padding: 8px 12px;
+    }
 
 }
