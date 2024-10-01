@@ -1,18 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const serviceId = new URLSearchParams(window.location.search).get('service_id');
-    document.getElementById('service_id').value = serviceId;
-});
+const getServices = ()=>{
+    const user_id = localStorage.getItem('user_id');
+    fetch(`https://homecrew-backend.onrender.com/cart/?client_id=${user_id}`)
+            .then((res) => res.json())
+            .then((data) => displayServices(data));
+}
+
+const displayServices = (services) =>{
+    services.forEach(service => {
+        const container = document.getElementById('ownedSerivceBody');
+        container.innerHTML += 
+        `
+            <option value="${service.id}">${service.service_name}</option>;
+        `;
+    });
+}
 
 function handleReviewSubmit(event) {
     event.preventDefault();
     
-    const serviceId = document.getElementById('service_id').value;
+    const serviceId = document.getElementById('ownedSerivceBody').value;
     const rating = document.getElementById('rating').value;
     const reviewBody = document.getElementById('reviewBody').value;
     const token = localStorage.getItem('token');
     const userID = localStorage.getItem('user_id');
-    const clientName = localStorage.getItem('client_name'); // Assuming clientName is stored in local storage
-    const serviceName = localStorage.getItem('service_name'); // Assuming serviceName is stored in local storage
 
     if (token) {
         const review = {
@@ -50,3 +60,5 @@ function handleReviewSubmit(event) {
         alert('You must be logged in to submit a review.');
     }
 }
+
+getServices();

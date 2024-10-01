@@ -28,11 +28,6 @@ const displayService = (services) =>{
                         `<button type="submit" class='service-btn' onclick='addToCart("${service.id}")'>Add To Cart</button>`
                         :`<p></p>`
                     }
-                    ${
-                        token?
-                        `<button class='btn btn-primary mb-1 ps-4 pe-4'><a class='text-decoration-none text-white' href="displayReview.html?service_id=${service.id}" class='text-white'>Review</a></button>`
-                        :`<p></p>`
-                    }
                     
                 
                 </div>
@@ -43,41 +38,7 @@ const displayService = (services) =>{
 
 loadService();
 
-// service details js page
 
-// const getparams = () =>{
-//     const param = new URLSearchParams(window.location.search).get('serviceID');
-//     fetch(`https://homecrew-backend.onrender.com/service/service/${param}`)
-//         .then((res) =>res.json())
-//         .then((data) =>displaydata(data));
-//     fetch(`https://homecrew-backend.onrender.com/service/review/?service_id=${param}`)
-//         .then((res) =>res.json())
-//         .then((data) =>displayReview(data));
-    
-
-// };
-
-// const displaydata = (service) =>{
-//     const parent = document.getElementById("doc-details");
-//     const div = document.createElement('div');
-//     div.classList.add('doc-details-container');
-//     div.innerHTML = `
-//             <div >
-//                 <img class="doc-image" src="${service.image}" alt="">
-//             </div>
-//             <div class="doc-info">
-//                 <h1>${service.name}</h1>
-//                 <h6>${service.average_rating !== null ? service.average_rating+' Star':'No one reviewed it yet'}</h6>
-//                 <p>${service.description}</p>
-//                 ${
-//                     token?
-//                     `<button type="button" class="btn btn-primary" onclick='addToCart("${service.id}")'>Add To Cart</button>`
-//                     :`<p></p>`
-//                 }
-//             </div>
-//     `;
-//     parent.appendChild(div);
-// }
 
 const displayReview = (services) =>{
     services.forEach(item => {

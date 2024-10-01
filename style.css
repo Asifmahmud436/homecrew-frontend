@@ -669,8 +669,11 @@ tbody tr:hover {
         display: flex;
         background-color: #0a3200;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         height: 70px;
+        /* overflow-x: auto;
+        overflow-y: none; */
+        /* position: relative; */
         /* margin-left: 0px; */
     }
     
@@ -707,34 +710,13 @@ tbody tr:hover {
         font-size: 3px;
         
         display: flex;
+        /* justify-content: space-between; */
         /* flex-wrap: wrap; */
         
     }
     
-    /* .dropdown{
-        width: 10px;
-        height: 10px;
-        position: relative;
-        
-    } */
-    .dropdown-reform{
-        /* font-weight: 100; */
-        /* margin-right: 0px; */
-        
-        background-color: #0a3200;
-        
-    }
-    .dropdown-btn {
-        /* padding: 5px 5px;  */
-        /* height: 34px;
-        width: 90px; */
-        font-size: 10px;
-        /* margin-bottom: 20px; */
-        /* padding-bottom: 10px; */
-        /* line-height: 5.2; */
-        
-        
-    }
+    
+    
 
 
 
@@ -1124,5 +1106,10 @@ tbody tr:hover {
     #first-name,#last-name,#phone-no,#facebook-id-link{
         margin-left: 90px;
     }
-
+    .dropdown-reform button{
+        font-size: 10px;
+        /* margin-right: 4px; */
+        padding: 6px;
+        margin-top: 5px;
+    }   
 }

@@ -5,6 +5,7 @@ const showNavItems=()=>{
         container.innerHTML +=
         `   <li class="login-li"><a href="index.html" class="nav-anchor">Home</a></li>
             <li class="login-li"><a href="serviceDetails.html" class="nav-anchor">Servcies</a></li>
+            <li class="login-li"><a href="displayReview.html" class="nav-anchor">Review</a></li>
             <div class="dropdown dropdown-reform" >
                 <button class="btn btn-secondary dropdown-toggle dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Profile
@@ -26,5 +27,6 @@ const showNavItems=()=>{
         `;
     }
 }
+
 
 showNavItems();

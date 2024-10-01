@@ -14,7 +14,7 @@
 }
 
 /* Responsive width for textarea and select */
-#reviewBody, #rating {
+#reviewBody, #rating,#ownedSerivceBody {
     width: 100%;
     max-width: 500px;
     padding: 15px;

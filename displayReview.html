@@ -21,6 +21,7 @@
                 <ul>
                     <li><img src="images/logo.png" alt="" class="logo-img"></li>
                     <li class="fw-bold main-li"><a href="index.html" class="nav-anchor sp-nav">HomeCrew</a></li>
+                    
                 </ul>
             </div>
             <div>
@@ -35,8 +36,13 @@
         <div id="review-form-container">
             <h1>Submit Review</h1>
             <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
-                <label for="reviewBody" class="fw-bold">Review:</label>
+                <label for="ownedSerivceBody" class="fw-bold">Service:</label>
+                <select id="ownedSerivceBody" name="course" required>
+                    <!-- the services the bought -->
+                </select><br><br>
+                <label for="reviewBody" class="fw-bold rating-label">Review:</label>
                 <textarea id="reviewBody" name="reviewBody" rows="4" required></textarea>
+                
                 <input type="hidden" id="service_id" value="">
                 <label for="rating" class="rating-label fw-bold">Rating:</label>
                 <select id="rating" name="rating">
