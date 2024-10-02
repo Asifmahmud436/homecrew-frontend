@@ -44,6 +44,10 @@ const handleLogin = (event) => {
         username,
         password,
     }
+    const errorMessageDiv = document.getElementById('error-message');
+    if(errorMessageDiv){
+        errorMessageDiv.textContent = '';
+    }
     if(username && password){
         fetch(`https://homecrew-backend.onrender.com/client/login/`,{
             method:'POST',
@@ -52,13 +56,34 @@ const handleLogin = (event) => {
         })
             .then((res)=>(res.json()))
             .then((data)=>{
-                console.log(data);
                 if(data.token && data.user_id){
                     localStorage.setItem('token',data.token);
                     localStorage.setItem('user_id',data.user_id);
                     window.location.href = 'index.html';
                 }
-            });    
+                else if(data.error){
+                    if(data.error === 'Your account is not activated.Please check your email for the activation link.'){
+                        showErrorMessage("Your Account is not activated.Please check your email for the activation link.");
+                    }
+                    else if(data.error === 'Invalid Credential.Please try again.'){
+                        showErrorMessage("Invalid username or password.Please try again.");
+                    }
+
+                }
+            })
+            .catch(error=>{
+                console.log('Error',error);
+                showErrorMessage("An error occured.Please try again later.")
+            })
     
     }
-}
+};
+
+
+const showErrorMessage =(message)=>{
+    const errorMessageDiv = document.getElementById('error-message');
+    if(errorMessageDiv){
+        errorMessageDiv.textContent = message;
+        errorMessageDiv.style.color = 'red';
+    }
+};
