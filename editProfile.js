@@ -11,11 +11,11 @@ const loadUser = () => {
     })
     .then((res) => res.json())
     .then(data => {
-        document.getElementById('user-photo').src = data.image || 'default-photo.png'; // Fallback to a default image if none is provided
-        document.getElementById('first-name').value = data.user.first_name || '';
-        document.getElementById('last-name').value = data.user.last_name || '';
-        document.getElementById('phone-no').value = data.phone_no || '';
-        document.getElementById('facebook-id-link').value = data.facebook_Id_link || '';
+        document.getElementById('user-photo').src = data.image || 'images/default-photo.jpg';
+        document.getElementById('first-name').value = data.user.first_name || 'Put Your First name';
+        document.getElementById('last-name').value = data.user.last_name || 'Put Your Last name';
+        document.getElementById('phone-no').value = data.phone_no || 'Put your Cell no';
+        document.getElementById('facebook-id-link').value = data.facebook_Id_link || 'Put your Facebook Id Link';
     })
     .catch(error => {
         console.error('Error loading user data:', error);
@@ -25,11 +25,10 @@ const loadUser = () => {
 
 
 document.getElementById('save-button').addEventListener('click', function() {
-    const user_id = localStorage.getItem('user_id'); // Make sure this calculation is correct
+    const user_id = localStorage.getItem('user_id'); 
     const token = localStorage.getItem('token');
     
     const formData = new FormData();
-    // formData.append('user.username', document.getElementById('username').value);
     formData.append('user.first_name', document.getElementById('first-name').value);
     formData.append('user.last_name', document.getElementById('last-name').value);
     formData.append('phone_no', document.getElementById('phone-no').value);
@@ -50,7 +49,7 @@ document.getElementById('save-button').addEventListener('click', function() {
     .then(response => response.json())
     .then(data => {
         console.log('User updated successfully', data);
-        loadUser();  // Reload user details
+        loadUser(); 
     })
     .catch(error => {
         console.error('Error updating user:', error);

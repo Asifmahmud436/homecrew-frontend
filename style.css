@@ -710,9 +710,6 @@ tbody tr:hover {
         font-size: 3px;
         
         display: flex;
-        /* justify-content: space-between; */
-        /* flex-wrap: wrap; */
-        
     }
     
     
@@ -1020,12 +1017,6 @@ tbody tr:hover {
         margin-left: 60px;
        
     }
-    /* .table-main{
-        background-color: #d7aefb;
-    } */
-    /* .table{
-        
-    } */
     tbody, tr, td {
         display: block;
         width: 100%;
@@ -1112,4 +1103,7 @@ tbody tr:hover {
         padding: 6px;
         margin-top: 5px;
     }   
+    #error-message{
+        font-size: 12px;
+    }
 }

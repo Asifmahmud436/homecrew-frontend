@@ -45,37 +45,30 @@ const handleLogin = (event) => {
         password,
     }
     const errorMessageDiv = document.getElementById('error-message');
-    if(errorMessageDiv){
+    if (errorMessageDiv) {
         errorMessageDiv.textContent = '';
     }
-    if(username && password){
-        fetch(`https://homecrew-backend.onrender.com/client/login/`,{
-            method:'POST',
-            headers:{'content-type':'application/json'},
-            body:JSON.stringify(info),
+    if (username && password) {
+        fetch(`https://homecrew-backend.onrender.com/client/login/`, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(info),
         })
-            .then((res)=>(res.json()))
-            .then((data)=>{
-                if(data.token && data.user_id){
-                    localStorage.setItem('token',data.token);
-                    localStorage.setItem('user_id',data.user_id);
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.token && data.user_id) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('user_id', data.user_id);
                     window.location.href = 'index.html';
-                }
-                else if(data.error){
-                    if(data.error === 'Your account is not activated.Please check your email for the activation link.'){
-                        showErrorMessage("Your Account is not activated.Please check your email for the activation link.");
-                    }
-                    else if(data.error === 'Invalid Credential.Please try again.'){
-                        showErrorMessage("Invalid username or password.Please try again.");
-                    }
-
+                } else if (data.error) {
+                    showErrorMessage(data.error); 
                 }
             })
-            .catch(error=>{
-                console.log('Error',error);
-                showErrorMessage("An error occured.Please try again later.")
-            })
-    
+            .catch(error => {
+                console.log('Error', error);
+                showErrorMessage("An error occurred. Please try again later.");
+            });
     }
 };
 
