@@ -17,7 +17,6 @@ const loadAllOrders = () =>{
                     .then((data) => displayAllOrders(data));
                     
             }
-            // console.log(data[0].user);
         });
     
 };
