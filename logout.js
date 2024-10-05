@@ -1,7 +1,7 @@
 const handleLogOut =()=>{
     const user_id = localStorage.getItem('user_id');
     const token = localStorage.getItem('token');
-    fetch(`https://homecrew-backend.onrender.com/client/logout/`, {
+    fetch(`https://homecrew-backend.vercel.app/client/logout/`, {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`,

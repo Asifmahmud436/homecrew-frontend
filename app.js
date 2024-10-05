@@ -1,9 +1,9 @@
 const token = localStorage.getItem('token');
 const loadService = () =>{
-    fetch("https://homecrew-backend.onrender.com/service/service/")
+    fetch("https://homecrew-backend.vercel.app/service/service/")
         .then((res) => res.json())
         .then((data) => displayService(data));
-    fetch("https://homecrew-backend.onrender.com/service/review/")
+    fetch("https://homecrew-backend.vercel.app/service/review/")
         .then((res) => res.json())
         .then((data) => displayReview(data));
 };
@@ -67,7 +67,7 @@ const displayReview = (services) =>{
 
 const addToCart=(param)=>{
     // console.log('Hello world.')
-    fetch(`https://homecrew-backend.onrender.com/service/service/${param}`)
+    fetch(`https://homecrew-backend.vercel.app/service/service/${param}`)
         .then((res) =>res.json())
         .then((data) =>{
             const parent = document.getElementById('cart-content');
@@ -115,7 +115,7 @@ orderAllItems = () =>{
                 "order_status": "Ordered",
                 "cancel": false
             };
-            fetch(`https://homecrew-backend.onrender.com/cart/`,{
+            fetch(`https://homecrew-backend.vercel.app/cart/`,{
                 method:'POST',
                 headers:{'Content-type':'application/json'},
                 body:JSON.stringify(info),

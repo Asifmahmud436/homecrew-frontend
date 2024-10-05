@@ -1,6 +1,6 @@
 const getServices = ()=>{
     const user_id = localStorage.getItem('user_id');
-    fetch(`https://homecrew-backend.onrender.com/cart/?client_id=${user_id}`)
+    fetch(`https://homecrew-backend.vercel.app/cart/?client_id=${user_id}`)
             .then((res) => res.json())
             .then((data) => displayServices(data));
 }
@@ -32,7 +32,7 @@ function handleReviewSubmit(event) {
             service: serviceId,
         };
 
-        fetch('https://homecrew-backend.onrender.com/service/review/', {
+        fetch('https://homecrew-backend.vercel.app/service/review/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

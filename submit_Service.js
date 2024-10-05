@@ -16,7 +16,7 @@ const handleService = (event) => {
     console.log(service_title);
     console.log(service_body);
     console.log(service_image);
-    fetch('https://homecrew-backend.onrender.com/service/service/', {
+    fetch('https://homecrew-backend.vercel.app/service/service/', {
         method: 'POST',
         headers: {
             // No need to set 'Content-Type', it will be set automatically when using FormData

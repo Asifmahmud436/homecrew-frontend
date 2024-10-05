@@ -15,7 +15,7 @@ const handleReg=(event)=>{
             confirm_password,
         };     
     if(password===confirm_password){
-        fetch(`https://homecrew-backend.onrender.com/client/register/`,{
+        fetch(`https://homecrew-backend.vercel.app/client/register/`,{
             method:'POST',
             headers:{'content-type':'application/json'},
             body:JSON.stringify(info),
@@ -49,7 +49,7 @@ const handleLogin = (event) => {
         errorMessageDiv.textContent = '';
     }
     if (username && password) {
-        fetch(`https://homecrew-backend.onrender.com/client/login/`, {
+        fetch(`https://homecrew-backend.vercel.app/client/login/`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(info),

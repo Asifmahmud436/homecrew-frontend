@@ -1,15 +1,15 @@
 const loadAllOrders = () =>{
     const user_id = localStorage.getItem('user_id');
-    fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`)
+    fetch(`https://homecrew-backend.vercel.app/client/list/${user_id}/`)
         .then((res) => res.json())
         .then((data) => {
             if(data.user.is_staff){
-                fetch(`https://homecrew-backend.onrender.com/cart/`)
+                fetch(`https://homecrew-backend.vercel.app/cart/`)
                     .then((res) => res.json())
                     .then((data) => displayAllOrders(data));
             }
             else{
-                fetch(`https://homecrew-backend.onrender.com/cart/?client_id=${user_id}`)
+                fetch(`https://homecrew-backend.vercel.app/cart/?client_id=${user_id}`)
                     .then((res) => res.json())
                     .then((data) => displayAllOrders(data));
             }
@@ -21,7 +21,7 @@ const loadAllOrders = () =>{
 
 const displayAllOrders =(items)=>{
     const user_id = localStorage.getItem('user_id') ;
-    fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`)
+    fetch(`https://homecrew-backend.vercel.app/client/list/${user_id}/`)
         .then((res) => res.json())
         .then((data) => {
             const admin = data.user.is_staff;
@@ -109,7 +109,7 @@ const displayAllOrders =(items)=>{
 
 const deleteOrder=(id)=>{
     const token = localStorage.getItem('token');
-    fetch(`https://homecrew-backend.onrender.com/cart/${id}/`, {
+    fetch(`https://homecrew-backend.vercel.app/cart/${id}/`, {
         method: 'PATCH',
         headers: {
             'Authorization': `Token ${token}`,
@@ -131,7 +131,7 @@ const deleteOrder=(id)=>{
 }
 const deliverOrder=(id)=>{
     const token = localStorage.getItem('token');
-    fetch(`https://homecrew-backend.onrender.com/cart/${id}/`, {
+    fetch(`https://homecrew-backend.vercel.app/cart/${id}/`, {
         method: 'PATCH',
         headers: {
             'Authorization': `Token ${token}`,

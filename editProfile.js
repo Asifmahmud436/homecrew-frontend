@@ -2,7 +2,7 @@ const loadUser = () => {
     const user_id = localStorage.getItem('user_id');
     const token = localStorage.getItem('token');
 
-    fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`, {
+    fetch(`https://homecrew-backend.vercel.app/client/list/${user_id}/`, {
         method: 'GET',
         headers: {
             'Authorization': `Token ${token}`,
@@ -39,7 +39,7 @@ document.getElementById('save-button').addEventListener('click', function() {
         formData.append('image', imageFile);
     }
 
-    fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`, {
+    fetch(`https://homecrew-backend.vercel.app/client/list/${user_id}/`, {
         method: 'PATCH',
         headers: {
             'Authorization': `Token ${token}`,
@@ -58,17 +58,17 @@ document.getElementById('save-button').addEventListener('click', function() {
 
 const AllUser = () =>{
     const user_id = localStorage.getItem('user_id');
-    fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`)
+    fetch(`https://homecrew-backend.vercel.app/client/list/${user_id}/`)
         .then((res) => res.json())
         .then((data) => loadAllUser(data));
  
-    fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`)
+    fetch(`https://homecrew-backend.vercel.app/client/list/${user_id}/`)
         .then((res) => res.json())
         .then((data) => loadAdminBtn(data));
 }
 const loadAllUser = (val) =>{
     if(val.user.is_staff == true){
-        fetch(`https://homecrew-backend.onrender.com/client/list/`)
+        fetch(`https://homecrew-backend.vercel.app/client/list/`)
         .then((res) => res.json())
         .then((items) => {
             const header_parent = document.getElementById('make-admin-table');
@@ -110,7 +110,7 @@ const loadAdminBtn=(item)=>{
 
 const requestAdmin=(id)=>{
     const token = localStorage.getItem('token');
-    fetch(`https://homecrew-backend.onrender.com/client/list/${id}/`, {
+    fetch(`https://homecrew-backend.vercel.app/client/list/${id}/`, {
         method: 'PATCH',
         headers: {
             'Authorization': `Token ${token}`,
@@ -132,7 +132,7 @@ const requestAdmin=(id)=>{
 };
 const makeAdmin=(id)=>{
     const token = localStorage.getItem('token');
-    fetch(`https://homecrew-backend.onrender.com/client/list/${id}/`, {
+    fetch(`https://homecrew-backend.vercel.app/client/list/${id}/`, {
         method: 'PATCH',
         headers: {
             'Authorization': `Token ${token}`,

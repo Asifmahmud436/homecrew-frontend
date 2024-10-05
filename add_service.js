@@ -1,6 +1,6 @@
 const checkAdmin=()=>{
     const user_id = localStorage.getItem('user_id');
-    fetch(`https://homecrew-backend.onrender.com/client/list/${user_id}/`)
+    fetch(`https://homecrew-backend.vercel.app/client/list/${user_id}/`)
         .then((res)=>res.json())
         .then(data =>{
             if(data.user.is_staff){
