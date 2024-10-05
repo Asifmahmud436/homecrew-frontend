@@ -1,6 +1,6 @@
 const getServices = ()=>{
-    const user_id = localStorage.getItem('user_id');
-    fetch(`https://homecrew-backend.vercel.app/cart/?client_id=${user_id}`)
+    const client_id = localStorage.getItem('client_id');
+    fetch(`https://homecrew-backend.vercel.app/cart/?client_id=${client_id}`)
             .then((res) => res.json())
             .then((data) => displayServices(data));
 }
@@ -22,7 +22,7 @@ function handleReviewSubmit(event) {
     const rating = document.getElementById('rating').value;
     const reviewBody = document.getElementById('reviewBody').value;
     const token = localStorage.getItem('token');
-    const userID = localStorage.getItem('user_id');
+    const client_id = localStorage.getItem('client_id');
 
     if (token) {
         const review = {

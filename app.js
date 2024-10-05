@@ -28,14 +28,20 @@ const displayService = (services) =>{
                         `<button type="submit" class='service-btn' onclick='addToCart("${service.id}")'>Add To Cart</button>`
                         :`<p></p>`
                     }
-                    
-                
                 </div>
         `;
         parent.appendChild(div);
     });
 };
-
+const saveClientId = () =>{
+    const user_id = localStorage.getItem('user_id');
+    fetch(`https://homecrew-backend.vercel.app/client/list/?user_id=${user_id}`)
+        .then((res) => res.json())
+        .then((data) => {
+            localStorage.setItem('client_id',data[0].id);
+        });
+}
+saveClientId();
 loadService();
 
 
@@ -101,35 +107,81 @@ const removeFromCartAll=()=>{
     });
     
 }
-orderAllItems = () =>{
-    if(token){
+
+
+// orderAllItems = () =>{
+//     // const token = localStorage.getItem('token');
+//     if(token){
+//         const items = document.getElementById('cart-content').children;
+//         for(let item of items){
+//             // const itemName  = item.querySelector('h4').innerText;
+//             const serviceId = item.dataset.serviceId;
+//             // const serviceId = item.dataset.serviceId;
+//             const client_id = localStorage.getItem('client_id');
+//             const info = {
+//                 "client": client_id,
+//                 "service": serviceId,
+//                 "order_status": "Ordered",
+//                 "cancel": false
+//             };
+//             fetch(`https://homecrew-backend.vercel.app/cart/`,{
+//                 method:'POST',
+//                 headers:{'Content-type':'application/json'},
+//                 body:JSON.stringify(info),
+//             })
+//                 .then((res)=>(res.json()))
+//                 .then((data)=>console.log(data))
+//                 window.location.href = 'order_history.html';
+//             // console.log(itemName,serviceId);
+//         };
+//         removeFromCartAll();
+//     }
+// }
+
+
+
+const orderAllItems = () => {
+    const token = localStorage.getItem('token'); // Ensure token is retrieved
+    if (token) {
         const items = document.getElementById('cart-content').children;
-        for(let item of items){
-            // const itemName  = item.querySelector('h4').innerText;
+        const client_id = localStorage.getItem('client_id');
+
+        // Create an array to hold promises for all fetch requests
+        const orderPromises = [];
+
+        for (let item of items) {
             const serviceId = item.dataset.serviceId;
-            // const serviceId = item.dataset.serviceId;
-            const user_id = localStorage.getItem('user_id');
             const info = {
-                "client": user_id,
+                "client": client_id,
                 "service": serviceId,
                 "order_status": "Ordered",
                 "cancel": false
             };
-            fetch(`https://homecrew-backend.vercel.app/cart/`,{
-                method:'POST',
-                headers:{'Content-type':'application/json'},
-                body:JSON.stringify(info),
+
+            // Push each fetch request promise into the array
+            const orderPromise = fetch(`https://homecrew-backend.vercel.app/cart/`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                    'Authorization': `Bearer ${token}` // Add authorization token here
+                },
+                body: JSON.stringify(info),
             })
-                .then((res)=>(res.json()))
-                .then((data)=>console.log(data))
-                window.location.href = 'order_history.html';
-            // console.log(itemName,serviceId);
-        };
-        removeFromCartAll();
+            .then(res => res.json())
+            .then(data => console.log("Order Response:", data))
+            .catch(error => console.error("Order Error:", error));
+
+            orderPromises.push(orderPromise);
+        }
+
+        // Wait for all fetch requests to complete before redirecting
+        Promise.all(orderPromises)
+            .then(() => {
+                removeFromCartAll();  // Clear the cart after all requests succeed
+                window.location.href = 'order_history.html'; // Redirect after orders are completed
+            })
+            .catch((error) => {
+                console.error("Error processing orders:", error);
+            });
     }
-}
-
-
-
-
-// getparams();
+};
