@@ -24,9 +24,6 @@ HomeCrew is an organization that provides home services to the common people.The
 - [Asifmahmud436](https://github.com/Asifmahmud436)
 
 
-## 🔗 Connect with me:
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/asif-mahmud-3bb1a627a/)
-
 
 
 ## Run Locally
@@ -73,7 +70,8 @@ Start the server from the Visual Studio Code with liveserver
 
 
 
-
+## 🔗 Connect with me:
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/asif-mahmud-3bb1a627a/)
 
 
 ## Feedback
