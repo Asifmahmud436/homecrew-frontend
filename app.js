@@ -3,11 +3,32 @@ const loadService = () =>{
     fetch("https://homecrew-backend.vercel.app/service/service/")
         .then((res) => res.json())
         .then((data) => displayService(data));
+    fetch("https://homecrew-backend.vercel.app/service/service/")
+        .then((res) => res.json())
+        .then((data) => displayIndexService(data));
     fetch("https://homecrew-backend.vercel.app/service/review/")
         .then((res) => res.json())
         .then((data) => displayReview(data));
 };
 
+const displayIndexService = (services) =>{
+    services.forEach(service => {
+        const parent = document.getElementById('index-service-section');
+        const div = document.createElement('div');
+        div.classList.add('index-service-card');
+        div.innerHTML = `
+                <div>
+                    <img src="${service.image}" alt="service-image" srcset="">
+                </div>
+                <div class='index-card-content'>
+                    <h2>${service.name}</h2>
+                    <p>${service.description.slice(0,80)}...</p>
+                    <button type="button"><a href="serviceDetails.html">See More</a></button>
+                </div>
+        `;
+        parent.appendChild(div);
+    });
+};
 const displayService = (services) =>{
     services.forEach(service => {
         let stars = '';
@@ -22,7 +43,7 @@ const displayService = (services) =>{
                 <div class='card-content'>
                     <h4>${service.name}</h4>
                     <p>${service.average_rating !== null ? stars:'No one reviewed it yet'}</p>
-                    <p>${service.description.slice(0,80)}</p>
+                    <p>${service.description.slice(0,80)}...</p>
                     ${
                         token?
                         `<button type="submit" class='service-btn' onclick='addToCart("${service.id}")'>Add To Cart</button>`

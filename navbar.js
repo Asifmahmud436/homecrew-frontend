@@ -1,6 +1,7 @@
 const showNavItems=()=>{
     const token = localStorage.getItem('token');
     const container = document.querySelector('.login-ul');
+    const orderBtn = document.querySelector('.cart-container');
     if(token){
         container.innerHTML +=
         `   <li class="login-li"><a href="index.html" class="nav-anchor">Home</a></li>
@@ -17,6 +18,7 @@ const showNavItems=()=>{
                 </ul>
             </div>
         `;
+        
     }
     else{
         container.innerHTML +=
@@ -25,6 +27,7 @@ const showNavItems=()=>{
             <li class="login-li"><a href="login.html" class="nav-anchor">Login</a></li>
             <li class="login-li"><a href="register.html" class="nav-anchor">Sign Up</a></li>
         `;
+        orderBtn.style.display = 'none';
     }
 }
 
