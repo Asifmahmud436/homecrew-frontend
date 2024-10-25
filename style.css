@@ -778,7 +778,13 @@ tbody tr:hover {
 
 
     /* service page */
-    
+    .service-container{
+        /* width: 1200px;
+        margin: auto; */
+        background-color: whitesmoke;
+        /* height: 100vh; */
+        height: auto;
+    }
     .cart-container {
         width: 300px;
         padding: 20px;
@@ -1167,6 +1173,9 @@ tbody tr:hover {
     color:  #134b05;
     padding: 8px 12px;
     
+}
+.smooth-transition {
+    transition: transform 0.5s linear; /* Smoothens the scroll */
 }
 
 @media screen  and (max-width:576px){

@@ -23,12 +23,13 @@ function handleReviewSubmit(event) {
     const reviewBody = document.getElementById('reviewBody').value;
     const token = localStorage.getItem('token');
     const client_id = localStorage.getItem('client_id');
+    const user_id = localStorage.getItem('user_id');
 
     if (token) {
         const review = {
             body: reviewBody,
             rating: rating,
-            client: userID,
+            client: user_id,
             service: serviceId,
         };
 
