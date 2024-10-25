@@ -43,31 +43,6 @@ Go to the project directory
 Start the server from the Visual Studio Code with liveserver
 
 
-
-
-## API Reference
-
-#### Get the service list
-
-```http
-  https://homecrew-backend.vercel.app/service/service/
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | shows all the service of Homecrew|
-
-#### Get all the reviews
-
-```http
-  https://homecrew-backend.vercel.app/service/review/
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | shows all the reviews |
-
-
 ## Features
 
 - Live previews
@@ -77,7 +52,8 @@ Start the server from the Visual Studio Code with liveserver
 ## Lessons Learned
 
 After completing this project, I can: 
-- Use multiple role base user 
+- Use multiple role base user
+- Can sort the services by average rankings
 - Deploy Projects on Vercel 
 - Use supabase as a site for deploying my PostgreSQL
 
