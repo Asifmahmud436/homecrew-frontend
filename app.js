@@ -129,38 +129,6 @@ const removeFromCartAll=()=>{
     
 }
 
-
-// orderAllItems = () =>{
-//     // const token = localStorage.getItem('token');
-//     if(token){
-//         const items = document.getElementById('cart-content').children;
-//         for(let item of items){
-//             // const itemName  = item.querySelector('h4').innerText;
-//             const serviceId = item.dataset.serviceId;
-//             // const serviceId = item.dataset.serviceId;
-//             const client_id = localStorage.getItem('client_id');
-//             const info = {
-//                 "client": client_id,
-//                 "service": serviceId,
-//                 "order_status": "Ordered",
-//                 "cancel": false
-//             };
-//             fetch(`https://homecrew-backend.vercel.app/cart/`,{
-//                 method:'POST',
-//                 headers:{'Content-type':'application/json'},
-//                 body:JSON.stringify(info),
-//             })
-//                 .then((res)=>(res.json()))
-//                 .then((data)=>console.log(data))
-//                 window.location.href = 'order_history.html';
-//             // console.log(itemName,serviceId);
-//         };
-//         removeFromCartAll();
-//     }
-// }
-
-
-
 const orderAllItems = () => {
     const token = localStorage.getItem('token'); // Ensure token is retrieved
     if (token) {
